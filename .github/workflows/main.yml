@@ -31,6 +31,8 @@ jobs:
         docker tag ${GITHUB_REPOSITORY} local/imagemanager:latest
         docker build -f tests/Dockerfile -t local/db_fixture .
         docker run -d --network imgm_default --network-alias image-manager ${TRAVIS_REPO_SLUG}
+
+    - name: Test
         docker run --network imgm_default local/db_fixture
 
   docker-hub:
