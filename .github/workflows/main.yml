@@ -33,6 +33,7 @@ jobs:
         docker run -d --network imgm_default --network-alias image-manager ${TRAVIS_REPO_SLUG}
 
     - name: Test
+      run: |
         docker run --network imgm_default local/db_fixture
 
   docker-hub:
